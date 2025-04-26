@@ -5,7 +5,10 @@ import os,json
 from firebase_admin import credentials, firestore
 
 app = Flask(__name__)
-CORS(app)
+
+CORS(app, origins=["http://localhost:5173"],
+     methods=["GET", "POST"],
+     allowed_headers=["Content-Type", "Authorization"])
 
 firebase_creds_str = os.getenv("FIREBASE_CREDS")
 if not firebase_creds_str:
@@ -160,4 +163,6 @@ def delete_audio():
     return jsonify({"message": "Audio deleted successfully!"}), 200
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = os.getenv("PORT", 5000)
+    print(f"🟢 Flask app is now running at http://0.0.0.0:{port}")
+    app.run(host="0.0.0.0", port=int(port), debug=True, use_reloader=False)
