@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../config';
 
 interface Audio {
   title: string;
@@ -18,7 +19,7 @@ const AudiosPage: React.FC = () => {
   }, []);
 
   const fetchAudios = () => {
-    fetch("http://localhost:5000/get_audios")
+    fetch(`${BASE_URL}/get_audios`)
       .then(response => response.json())
       .then(data => {
         setAudios(data);
@@ -68,7 +69,7 @@ const AudiosPage: React.FC = () => {
 
     setUploading(true);
 
-    fetch("http://localhost:5000/upload_audio_urls", {
+    fetch(`${BASE_URL}/upload_audio_urls`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -92,7 +93,7 @@ const AudiosPage: React.FC = () => {
   const handleRemove = (title: string) => {
     if (!window.confirm(`Are you sure you want to delete "${title}"?`)) return;
 
-    fetch("http://localhost:5000/delete_audio", {
+    fetch(`${BASE_URL}/delete_audio`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

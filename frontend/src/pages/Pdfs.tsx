@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../config';
 
 interface Pdf {
   title: string;
@@ -18,7 +19,7 @@ const PdfsPage: React.FC = () => {
   }, []);
 
   const fetchPdfs = () => {
-    fetch("http://localhost:5000/get_pdfs")
+    fetch(`${BASE_URL}/get_pdfs`)
       .then(response => response.json())
       .then(data => {
         setPdfs(data);
@@ -68,7 +69,7 @@ const PdfsPage: React.FC = () => {
 
     setUploading(true);
 
-    fetch("http://localhost:5000/upload_pdf_urls", {
+    fetch(`${BASE_URL}/upload_pdf_urls`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -92,7 +93,7 @@ const PdfsPage: React.FC = () => {
   const handleRemove = (title: string) => {
     if (!window.confirm(`Are you sure you want to delete "${title}"?`)) return;
 
-    fetch("http://localhost:5000/delete_pdf", {
+    fetch(`${BASE_URL}/delete_pdf`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

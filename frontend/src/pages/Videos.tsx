@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../config';
 
 interface Video {
   title: string;
@@ -19,7 +20,7 @@ const VideosPage: React.FC = () => {
   }, []);
 
   const fetchVideos = () => {
-    fetch("http://localhost:5000/get_videos")
+    fetch(`${BASE_URL}/get_videos`)
       .then(response => response.json())
       .then(data => {
         setVideos(data);
@@ -69,7 +70,7 @@ const VideosPage: React.FC = () => {
 
     setUploading(true);
 
-    fetch("http://localhost:5000/upload_video_urls", {
+    fetch(`${BASE_URL}/upload_video_urls`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -93,7 +94,7 @@ const VideosPage: React.FC = () => {
   const handleRemove = (title: string) => {
     if (!window.confirm(`Are you sure you want to delete "${title}"?`)) return;
 
-    fetch("http://localhost:5000/delete_video", {
+    fetch(`${BASE_URL}/delete_video`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
