@@ -13,7 +13,7 @@ export default function HomePage() {
       <div>
         {/* Language Toggle Button */}
         <div className="flex justify-end mb-4 items-center space-x-2">
-          <span className="text-sm font-medium">{isTelugu ? "తెలుగు" : "English"}</span>
+          <span className="text-sm font-medium">తెలుగు </span>
           <button
             onClick={toggleLanguage}
             className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ${
@@ -26,6 +26,7 @@ export default function HomePage() {
               }`}
             />
           </button>
+          <span className="text-sm font-medium"> English</span>
         </div>
 
         {/* Title */}

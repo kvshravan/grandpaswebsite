@@ -14,6 +14,7 @@ const VideosPage: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [uploadEntries, setUploadEntries] = useState<string>("");
   const [playingUrl, setPlayingUrl] = useState<string | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetchVideos();
@@ -145,7 +146,7 @@ const VideosPage: React.FC = () => {
   };
 
   return (
-    <div className="p-8 max-w-3xl mx-auto">
+    <div className="p-8 max-w-3xl mx-auto relative">
 
       <div className="flex justify-between mb-4 items-center">
         <h1 className="text-3xl font-bold text-center text-indigo-700">Videos</h1>
@@ -216,7 +217,10 @@ const VideosPage: React.FC = () => {
 
               <div className="flex gap-4">
                 <button
-                  onClick={() => setPlayingUrl(video.url)}
+                  onClick={() => {
+                    setPlayingUrl(video.url);
+                    setShowModal(true);
+                  }}
                   className="text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                 >
                   Play Here
@@ -236,20 +240,36 @@ const VideosPage: React.FC = () => {
         </ul>
       )}
 
-      {playingUrl && (
-        <div className="mt-8">
-          <h2 className="text-2xl font-semibold mb-4 text-center">Now Playing</h2>
-          <iframe
-            width="100%"
-            height="400"
-            src={convertToEmbedUrl(playingUrl)}
-            title="YouTube Video Player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="rounded-lg"
-          />
-        </div>
-      )}
+      {/* Popup Modal */}
+      {showModal && playingUrl && (
+  <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+    <div className="relative bg-white p-2 rounded-lg shadow-lg max-w-3xl w-full">
+      {/* Close Button */}
+      <button
+        onClick={() => setPlayingUrl(null)}
+        className="absolute top-2 right-2 text-black text-2xl font-bold hover:text-red-600"
+      >
+        &times;
+      </button>
+
+      <h2 className="text-2xl font-semibold mb-4 text-center text-black">Now Playing</h2>
+
+      <div className="w-full aspect-video">
+        <iframe
+          width="100%"
+          height="100%"
+          src={convertToEmbedUrl(playingUrl)}
+          title="YouTube Video Player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="rounded-lg w-full h-full"
+        />
+      </div>
+    </div>
+  </div>
+)}
+
+
     </div>
   );
 };
