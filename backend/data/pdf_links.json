@@ -1,6 +1,126 @@
 [
-  {
-    "title": "Bhagavad Gita - Chapter 1",
-    "url": "https://drive.google.com/file/d/FILE_ID/view"
-  }
+    {
+        "title": "Bhagavad Gita - Chapter 1",
+        "url": "https://drive.google.com/file/d/FILE_ID_1/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 1",
+        "url": "https://drive.google.com/file/d/FILE_ID_3/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 2",
+        "url": "https://drive.google.com/file/d/FILE_ID_4/view"
+    },
+    {
+        "title": "Ramayan - Chapter 2",
+        "url": "https://drive.google.com/file/d/FILE_ID_5/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 2",
+        "url": "https://drive.google.com/file/d/FILE_ID_6/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 3",
+        "url": "https://drive.google.com/file/d/FILE_ID_7/view"
+    },
+    {
+        "title": "Ramayan - Chapter 3",
+        "url": "https://drive.google.com/file/d/FILE_ID_8/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 3",
+        "url": "https://drive.google.com/file/d/FILE_ID_9/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 4",
+        "url": "https://drive.google.com/file/d/FILE_ID_10/view"
+    },
+    {
+        "title": "Ramayan - Chapter 4",
+        "url": "https://drive.google.com/file/d/FILE_ID_11/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 4",
+        "url": "https://drive.google.com/file/d/FILE_ID_12/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 5",
+        "url": "https://drive.google.com/file/d/FILE_ID_13/view"
+    },
+    {
+        "title": "Ramayan - Chapter 5",
+        "url": "https://drive.google.com/file/d/FILE_ID_14/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 5",
+        "url": "https://drive.google.com/file/d/FILE_ID_15/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 6",
+        "url": "https://drive.google.com/file/d/FILE_ID_16/view"
+    },
+    {
+        "title": "Ramayan - Chapter 6",
+        "url": "https://drive.google.com/file/d/FILE_ID_17/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 6",
+        "url": "https://drive.google.com/file/d/FILE_ID_18/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 7",
+        "url": "https://drive.google.com/file/d/FILE_ID_19/view"
+    },
+    {
+        "title": "Ramayan - Chapter 7",
+        "url": "https://drive.google.com/file/d/FILE_ID_20/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 8",
+        "url": "https://drive.google.com/file/d/FILE_ID_21/view"
+    },
+    {
+        "title": "Ramayan - Chapter 8",
+        "url": "https://drive.google.com/file/d/FILE_ID_22/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 8",
+        "url": "https://drive.google.com/file/d/FILE_ID_23/view"
+    },
+    {
+        "title": "Bhagavad Gita - Chapter 9",
+        "url": "https://drive.google.com/file/d/FILE_ID_24/view"
+    },
+    {
+        "title": "Ramayan - Chapter 9",
+        "url": "https://drive.google.com/file/d/FILE_ID_25/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 9",
+        "url": "https://drive.google.com/file/d/FILE_ID_26/view"
+    },
+    {
+        "title": "Ramayan - Chapter 33",
+        "url": "https://drive.google.com/file/d/FILE_ID_99/view"
+    },
+    {
+        "title": "Mahabharat - Chapter 33",
+        "url": "https://drive.google.com/file/d/FILE_ID_100/view"
+    },
+    {
+        "title": "Mahabartam Part 20",
+        "url": "http://localhost:5000/uploads/declaration.pdf"
+    },
+    {
+        "title": "Bhagavad Gita Chapter 200",
+        "url": "https://drive.google.com/abc123"
+    },
+    {
+        "title": "Bhagavad Gita Chapter 51",
+        "url": "https://drive.google.com/abc123"
+    },
+    {
+        "title": "Bhagavad Gita Chapter 1",
+        "url": "https://drive.google.com/abc123"
+    }
 ]
