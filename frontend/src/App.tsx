@@ -5,6 +5,7 @@ import PdfsPage from './pages/Pdfs';
 import VideosPage from './pages/Videos';
 import AdminUploadPage from './pages/Admin';
 import AudiosPage from './pages/Audios';
+import Gallery from './pages/Gallery';
 
 export default function App() {
   return (
@@ -25,6 +26,9 @@ export default function App() {
             <Link to="/audios" className="hover:bg-indigo-700 px-4 py-2 rounded">
               Audios
             </Link>
+            <Link to="/gallery" className="bg-indigo-500 px-4 py-2 rounded">
+              Gallery
+            </Link>
           </div>
 
         </div>
@@ -38,6 +42,7 @@ export default function App() {
           <Route path="/videos" element={<VideosPage />} />
           <Route path="/admin" element={<AdminUploadPage />} />
           <Route path="/audios" element={<AudiosPage />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </div>
     </div>

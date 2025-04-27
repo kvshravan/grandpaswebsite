@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import backgroundImage from '../assets/bw2.webp'; // ✅ Import image
 
 export default function HomePage() {
   const [isTelugu, setIsTelugu] = useState(true);
@@ -10,7 +11,15 @@ export default function HomePage() {
 
   return (
     <div className="p-8 max-w-3xl mx-auto min-h-screen flex flex-col justify-between">
-      <div>
+         <div>
+        {/* Logo Image */}
+        <div className="flex justify-center mb-6">
+          <img 
+            src={backgroundImage} 
+            alt="Logo" 
+            className="h-40 object-contain" // adjust h-40 as needed
+          />
+        </div>
         {/* Language Toggle Button */}
         <div className="flex justify-end mb-4 items-center space-x-2">
           <span className="text-sm font-medium">తెలుగు </span>
@@ -38,8 +47,11 @@ export default function HomePage() {
         <p className="text-lg leading-7 mb-8">
           {isTelugu ? (
             <>
-              శ్రీ అప్పన్ కందాడై పెరుమాండ్లాచార్యులు గారు భారతీయ సనాతన ధర్మాన్ని ప్రజల్లోకి తీసుకువెళ్ళే మహోన్నత కార్యానికి జీవితాన్ని అంకితం చేసిన ఆధ్యాత్మిక ఉపన్యాసకులు.
-              భగవద్గీత, రామాయణం, భాగవతం వంటి శ్రేష్ఠ గ్రంథాలను సాధారణ ప్రజల భాషలో అర్థమయ్యేలా ఉపన్యాసాలు ఇచ్చారు.
+               శ్రీమదుభయ వేదాంత ప్రవర్తకాచార్యులు ఉభయ వేదాంత శిరోమణి, విశిష్టాద్వైత వేదాంత విశారద
+               శ్రీమాన్ అప్పన్ కందాడై పెరుమాండ్లాచార్యులు గారు భారతీయ సనాతన ధర్మాన్ని ప్రజల్లోకి తీసుకువెళ్ళే మహోన్నత కార్యానికి జీవితాన్ని అంకితం చేసిన ఆధ్యాత్మిక ఉపన్యాసకులు.
+              భగవద్గీత, రామాయణం, భాగవతం, భగవద్విషయము, శ్రీవచనభూషణము, ఆచార్య హృదయము వంటి అనేక సంప్రదాయ గ్రంథాలను సేవించి, ఆసక్తికలవారికి అనేకమంది కి కాలక్షేపములు సాయించు-చున్నారు.
+              <br></br><br></br>
+              అనేక పరిశోధన గ్రంథాలు, అనువాద గ్రంథాలు, స్తోత్రగ్రంథాలు, విమర్శన గ్రంథాలు, సాంప్రదాయ గ్రంథాలు రచించడమేకాక తానే స్వయంగా వాటిని తెలుగులో డిటిపి చేసి స్వంత ఖర్చులతో ముద్రణ చేసి అందరికీ అందుబాటులో  ఉపయోగపడేలా చేసిన మహనీయులు.
               ఈ వెబ్‌సైట్ ద్వారా ఆయన ప్రవచనాలు వీడియోలు, ఆడియోలు, పాఠ్యరూపాల్లో అందుబాటులో ఉంటాయి.
             </>
           ) : (
@@ -53,15 +65,19 @@ export default function HomePage() {
 
         {/* Buttons */}
         <div className="flex flex-col space-y-4">
-          <Link to="/pdfs" className="w-full p-3 bg-indigo-500 text-white text-center rounded hover:bg-indigo-600">
-            {isTelugu ? "PDFs చూడండి" : "View PDFs"}
-          </Link>
-          <Link to="/videos" className="w-full p-3 bg-indigo-500 text-white text-center rounded hover:bg-indigo-600">
-            {isTelugu ? "వీడియోలు చూడండి" : "View Videos"}
-          </Link>
-          <Link to="/audios" className="w-full p-3 bg-indigo-500 text-white text-center rounded hover:bg-indigo-600">
-            {isTelugu ? "ఆడియోలు వినండి" : "Listen Audios"}
-          </Link>
+        <Link to="/pdfs" className="w-full p-3 bg-indigo-500 text-white text-center rounded hover:bg-indigo-600">
+  {isTelugu ? "పుస్తకాలు చూడండి" : "View Books"}
+</Link>
+<Link to="/videos" className="w-full p-3 bg-indigo-500 text-white text-center rounded hover:bg-indigo-600">
+  {isTelugu ? "వీడియోలు చూడండి" : "View Videos"}
+</Link>
+<Link to="/audios" className="w-full p-3 bg-indigo-500 text-white text-center rounded hover:bg-indigo-600">
+  {isTelugu ? "ఆడియోలు వినండి" : "Listen Audios"}
+</Link>
+<Link to="/gallery" className="w-full p-3 bg-indigo-500 text-white text-center rounded hover:bg-indigo-600">
+  {isTelugu ? "గ్యాలరీ చూడండి" : "View Gallery"}
+</Link>
+
         </div>
       </div>
 

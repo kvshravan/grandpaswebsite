@@ -162,6 +162,36 @@ def delete_audio():
 
     return jsonify({"message": "Audio deleted successfully!"}), 200
 
+# Gallery Endpoints
+@app.route('/gallery', methods=['GET'])
+def get_gallery():
+    gallery_ref = db.collection('gallery')
+    docs = gallery_ref.stream()
+    images = [doc.to_dict()['url'] for doc in docs]
+    return jsonify({'images': images})
+
+@app.route('/gallery', methods=['POST'])
+def add_image():
+    data = request.json
+    url = data.get('url')
+    if not url:
+        return jsonify({'error': 'Missing URL'}), 400
+    db.collection('gallery').add({'url': url})
+    return jsonify({'success': True})
+
+@app.route('/gallery', methods=['DELETE'])
+def delete_image():
+    data = request.json
+    url = data.get('url')
+    if not url:
+        return jsonify({'error': 'Missing URL'}), 400
+    gallery_ref = db.collection('gallery')
+    docs = gallery_ref.where('url', '==', url).stream()
+    for doc in docs:
+        doc.reference.delete()
+    return jsonify({'success': True})
+
+
 if __name__ == "__main__":
     port = os.getenv("PORT", 5000)
     print(f"🟢 Flask app is now running at http://0.0.0.0:{port}")
