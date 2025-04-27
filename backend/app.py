@@ -6,8 +6,8 @@ from firebase_admin import credentials, firestore
 
 app = Flask(__name__)
 
-CORS(app, origins=["http://localhost:5173","https://lhvspravachanams.vercel.app"],
-     methods=["GET", "POST"],
+CORS(app, origins=["http://localhost:5173","https://lhvspravachanams.vercel.app","https://www.hayavadana.com","https://hayavadana.com"],
+     methods=["GET", "POST", "DELETE"],
      allowed_headers=["Content-Type", "Authorization"])
 
 firebase_creds_str = os.getenv("FIREBASE_CREDS")
