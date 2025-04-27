@@ -16,15 +16,19 @@ export default function Gallery() {
   };
 
   useEffect(() => {
+    // Scroll to the top of the page when the component is mounted
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3500); // Auto-slide every 5 seconds
+    }, 3500); // Auto-slide every 3.5 seconds
 
     return () => clearInterval(interval); // Clean up on unmount
   }, []);
 
   return (
     <div className="p-8 max-w-5xl mx-auto">
+      {/* Title */}
       <h1 className="text-3xl font-bold mb-6 text-center text-indigo-700">Photo Gallery</h1>
 
       {/* Slideshow */}
@@ -49,7 +53,8 @@ export default function Gallery() {
           ➡️
         </button>
       </div>
-      <br></br>
+
+      {/* All Images Grid */}
       <h1 className="text-3xl font-bold mb-6 text-center text-indigo-700">All Images</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {images.map((src, index) => (
