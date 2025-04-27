@@ -139,7 +139,7 @@ const AudiosPage: React.FC = () => {
 
       {isAdmin && (
         <form onSubmit={handleUpload} className="space-y-4 mb-8">
-          <p className="text-gray-700 text-sm mb-2">
+          <p className="text-white font-bold text-sm mb-2">
             <strong>Hint:</strong> Enter one entry per line. Format: <br/>
             <code>Title, URL</code> <br/>
             Example:<br/>
@@ -170,7 +170,6 @@ const AudiosPage: React.FC = () => {
           {filteredAudios.map((audio, index) => (
             <li key={index} className="flex items-center justify-between">
               <div>
-                <span className="mr-2 font-bold">{index + 1}.</span>
                 <a
                   href={audio.url}
                   className="text-indigo-600 underline"

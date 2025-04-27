@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div>
       {/* Navbar across all pages */}
-      <nav className="bg-[#111111] shadow-lg text-white p-4 fixed w-full top-0 left-0 z-10">
+      <nav className="bg-[#373737] shadow-lg text-white p-4 fixed w-full top-0 left-0 z-10">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
           <a href="/" className="text-2xl font-bold hover:bg-indigo-700 px-4 py-1 rounded">
             Home
